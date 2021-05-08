@@ -11,14 +11,15 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    int num;
-    int numToButton;
+    float num;
     char action;
     private TextView calcDisplay;
     private TextView equal;
     String calcDisplayContent = "0";
     String equalContent = "0";
     private Calculat calculat;
+
+    private static final String KEY_NUMBERS = "Numbers";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
             forButtonAction(action);
         });
 
+        findViewById(R.id.button_percent).setOnClickListener(v -> {
+            action = '%';
+            forButtonAction(action);
+        });
+
         findViewById(R.id.button_reset).setOnClickListener(v -> {
             calculat.resetDisplay();
             calcDisplayContent = "0";
@@ -117,9 +123,13 @@ public class MainActivity extends AppCompatActivity {
             } else if (action == '/') {
                 equalContent = "" + calculat.split();
                 num = calculat.split();
+            } else if (action == '%') {
+                equalContent = "" + calculat.persent();
+                num = calculat.persent();
             }
 
             calcDisplay.setText(calculat.getDisplay());
+            calculat.setDisplayResult(equalContent);
             equal.setText(equalContent);
         });
     }
@@ -135,8 +145,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculat = (Calculat) instanceState.getSerializable(KEY_NUMBERS);
+        calcDisplay.setText(calculat.getDisplay());
+        equal.setText(calculat.getDisplayResult());
     }
 
     @Override
@@ -150,8 +163,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
+    protected void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putSerializable(KEY_NUMBERS, calculat);
     }
 
     @Override
@@ -166,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void forNumButtonAction(int buttonNum) {
         calcDisplayContent = calcDisplayContent + buttonNum;
-        num = Integer.parseInt(calcDisplayContent);
+        num = Float.parseFloat(calcDisplayContent);
         calculat.setDisplay(String.format(Locale.getDefault(), "%d", buttonNum));
         calcDisplay.setText(calculat.getDisplay());
     }
