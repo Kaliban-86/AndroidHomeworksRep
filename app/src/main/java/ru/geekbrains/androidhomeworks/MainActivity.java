@@ -3,13 +3,16 @@ package ru.geekbrains.androidhomeworks;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Constants {
+
 
     float num;
     char action;
@@ -131,6 +134,15 @@ public class MainActivity extends AppCompatActivity {
             calcDisplay.setText(calculat.getDisplay());
             calculat.setDisplayResult(equalContent);
             equal.setText(equalContent);
+        });
+
+        Button buttonSettings = findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(runSettings);
+            }
         });
     }
 

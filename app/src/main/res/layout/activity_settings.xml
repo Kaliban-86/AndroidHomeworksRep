@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity"
+    android:theme="@style/StyleForSettingsTestOne">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/themes"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textSize="@dimen/textSizeToDisplay"
+        android:textColor="@color/white"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTheme"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        app:cornerRadius="17dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp"
+        app:backgroundTint="@color/black"
+        android:text="Ночная тема" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonReturn"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        app:cornerRadius="17dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp"
+        app:backgroundTint="#cc1c1e"
+        android:text="@string/_return" />
+
+
+</LinearLayout>
