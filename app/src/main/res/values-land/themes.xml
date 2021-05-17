@@ -23,7 +23,7 @@
         <item name="android:layout_marginTop">@dimen/marginSize</item>
         <item name="android:layout_marginStart">@dimen/marginSize</item>
         <item name="android:fontFamily">sans-serif-black</item>
-        <item name="backgroundTint">@color/personal</item>
+        <item name="backgroundTint">@color/black</item>
         <item name="strokeWidth">@dimen/buttonStrokeWidth</item>
         <item name="strokeColor">@color/black</item>
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
