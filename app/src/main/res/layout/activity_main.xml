@@ -9,8 +9,16 @@
     android:paddingRight="15dp"
     android:paddingLeft="15dp"
     tools:context=".MainActivity"
-    android:background="@color/main">
+    style="@style/StyleForSettingsTestOne">
 
+
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/button" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -222,9 +230,10 @@
             android:text="@string/reset"
             android:textColor="@color/white"
             android:textSize="@dimen/buttonTextSize"
-            app:backgroundTint="#12620d"
+            app:backgroundTint="@color/green"
             app:cornerRadius="@dimen/buttonCornerRadius"
             app:strokeWidth="@dimen/buttonStrokeWidth"
+            app:strokeColor="@color/strokeColor"
             android:layout_marginEnd="2dp"
             android:layout_marginRight="2dp" />
 
@@ -236,9 +245,11 @@
             android:text="@string/equal"
             android:textColor="@color/white"
             android:textSize="@dimen/buttonTextSize"
-            app:backgroundTint="#cc1c1e"
+            app:strokeColor="@color/strokeColor"
+            app:backgroundTint="@color/red"
             app:cornerRadius="@dimen/buttonCornerRadius"
             app:strokeWidth="@dimen/buttonStrokeWidth" />
+
     </LinearLayout>
 
 

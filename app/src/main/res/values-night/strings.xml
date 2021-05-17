@@ -18,4 +18,9 @@
     <string name="multiply">*</string>
     <string name="equal">=</string>
     <string name="_0">0</string>
+    <string name="night">Night theme</string>
+    <string name="white">White theme</string>
+    <string name="themes">Themes</string>
+    <string name="_return">Return</string>
+    <string name="button">Настройки темы</string>
 </resources>
